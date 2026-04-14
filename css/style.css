@@ -1,0 +1,567 @@
+.botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  position: relative;
+  transition: ease 0.2s;
+}
+.botao::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.9);
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.botao svg {
+  transition: ease 0.2s;
+}
+.botao span {
+  display: block;
+  font-size: 1.125rem;
+}
+@media (max-width: 768px) {
+  .botao span {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  .botao:hover svg {
+    transform: rotate(45deg);
+  }
+}
+
+.titulo-bloco {
+  font-size: 2.5rem;
+  line-height: 1.2em;
+}
+@media (max-width: 768px) {
+  .titulo-bloco {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: rgba(255, 255, 255, 0.9);
+  background: #0C0102;
+  font-size: 1.125rem;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: "Benguiat";
+  src: url(fontes/Benguiat\ Bold.ttf);
+}
+.container {
+  width: 100%;
+  padding: 0 7vw;
+  margin: 0 auto;
+}
+.container.d-flex {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+  outline: none;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+.bl-principal {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center top;
+  background-size: cover;
+  padding: 100px 0;
+  position: relative;
+}
+.bl-principal picture {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+}
+.bl-principal picture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+}
+@media (max-width: 768px) {
+  .bl-principal {
+    align-items: normal;
+    padding-bottom: 40px;
+  }
+}
+.bl-principal::before {
+  content: "";
+  background: linear-gradient(180deg, rgba(12, 1, 2, 0) 0%, #0C0102 100%);
+  width: 100%;
+  height: 101%;
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 0;
+}
+.bl-principal .container {
+  position: relative;
+  z-index: 3;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .bl-principal .container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.bl-principal .meta-1 {
+  width: 40%;
+}
+@media (max-width: 768px) {
+  .bl-principal .meta-1 {
+    width: 100%;
+  }
+}
+.bl-principal .meta-1 h1 {
+  font-family: "Benguiat";
+  font-size: 4.125rem;
+  line-height: 1.2em;
+}
+@media (max-width: 768px) {
+  .bl-principal .meta-1 h1 {
+    font-size: 3rem;
+    text-align: center;
+  }
+}
+.bl-principal .meta-1 h2 {
+  font-size: 1.5rem;
+  line-height: 1em;
+  letter-spacing: 10px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  opacity: 0.75;
+}
+@media (max-width: 768px) {
+  .bl-principal .meta-1 h2 {
+    font-size: 1rem;
+  }
+}
+.bl-principal .meta-2 {
+  width: 30%;
+  text-align: end;
+}
+@media (max-width: 768px) {
+  .bl-principal .meta-2 {
+    width: auto;
+    text-align: start;
+  }
+}
+.bl-principal .meta-2 h3 {
+  font-size: 2.25rem;
+  line-height: 1.2em;
+  margin-bottom: 24px;
+}
+@media (max-width: 768px) {
+  .bl-principal .meta-2 h3 {
+    font-size: 1.75rem;
+    font-weight: 300;
+  }
+}
+
+.background {
+  background-image: url(../imagens/bg-sec2.webp);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 2;
+  background-color: #0C0102;
+}
+
+.bl-cidade {
+  padding: 75px 0 60px 0;
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 768px) {
+  .bl-cidade {
+    padding: 40px 0 60px 0;
+  }
+}
+.bl-cidade .container {
+  display: block;
+}
+.bl-cidade .meta-titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+}
+@media (max-width: 768px) {
+  .bl-cidade .meta-titulo {
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .bl-cidade .botao {
+    display: none;
+  }
+}
+.bl-cidade .cidades {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  .bl-cidade .cidades {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 14px;
+  }
+}
+.bl-cidade .cidades .cidade {
+  position: relative;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  padding: 20px;
+  aspect-ratio: 3/2;
+  overflow: hidden;
+  transition: ease 0.2s;
+  border-radius: 4px;
+}
+.bl-cidade .cidades .cidade img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(1);
+  transition: ease 0.2s;
+}
+.bl-cidade .cidades .cidade h3,
+.bl-cidade .cidades .cidade span {
+  position: relative;
+}
+.bl-cidade .cidades .cidade h3 {
+  font-size: 1.25rem;
+  line-height: 1em;
+}
+@media (max-width: 768px) {
+  .bl-cidade .cidades .cidade h3 {
+    font-size: 1rem;
+  }
+}
+.bl-cidade .cidades .cidade span {
+  font-size: 0.8rem;
+  line-height: 1em;
+  display: block;
+}
+@media (max-width: 768px) {
+  .bl-cidade .cidades .cidade span {
+    font-size: 0.7rem;
+  }
+}
+@media (min-width: 1200px) {
+  .bl-cidade .cidades .cidade:hover img {
+    transform: scale(1.05);
+  }
+}
+
+.bl-depoimentos {
+  padding-bottom: 100px;
+}
+@media (max-width: 768px) {
+  .bl-depoimentos {
+    padding-bottom: 75px;
+  }
+}
+.bl-depoimentos .container {
+  display: block;
+}
+.bl-depoimentos .logotipos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 86px;
+}
+@media (max-width: 768px) {
+  .bl-depoimentos .logotipos img {
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    aspect-ratio: 1;
+    max-width: 90px;
+  }
+}
+.bl-depoimentos .depoimentos {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  .bl-depoimentos .depoimentos {
+    flex-direction: column;
+  }
+}
+.bl-depoimentos .depoimentos p {
+  margin-top: 10px;
+}
+@media (max-width: 768px) {
+  .bl-depoimentos .depoimentos p {
+    font-size: 1rem;
+  }
+}
+
+.bl-agradecimento {
+  padding: 40px 0 90px;
+  position: relative;
+  z-index: 2;
+  background-color: #0C0102;
+}
+@media (max-width: 768px) {
+  .bl-agradecimento {
+    padding-bottom: 60px;
+  }
+}
+.bl-agradecimento .titulo-bloco {
+  text-align: center;
+  margin-bottom: 52px;
+}
+.bl-agradecimento .lista-cidades {
+  display: flex;
+  justify-content: space-between;
+  margin: 16px 0;
+}
+@media (max-width: 768px) {
+  .bl-agradecimento .lista-cidades {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+.bl-agradecimento .lista-cidades li h3 {
+  font-size: 1.125rem;
+}
+
+#smooth-wrapper {
+  overflow: hidden !important;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 64px 56px;
+  width: 100%;
+  position: absolute;
+  z-index: 5;
+}
+@media (max-width: 768px) {
+  header {
+    padding: 34px 26px;
+  }
+}
+header h2 {
+  font-size: 1.8rem;
+  line-height: 1em;
+}
+
+footer {
+  background-image: url(../imagens/bg-footer.webp);
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  overflow-x: hidden;
+}
+@media (max-width: 768px) {
+  footer {
+    padding-top: 60px;
+  }
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  footer .container {
+    display: block;
+  }
+}
+footer .conteudo-direita {
+  display: flex;
+  gap: 80px;
+}
+@media (max-width: 768px) {
+  footer .conteudo-direita {
+    display: block;
+  }
+}
+footer .conteudo-direita .sociais h3 {
+  margin-bottom: 16px;
+  font-size: 1.125rem;
+}
+@media (max-width: 768px) {
+  footer .conteudo-direita .sociais h3 {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+}
+footer .conteudo-direita .sociais .links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+@media (max-width: 768px) {
+  footer .conteudo-direita .sociais .links {
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+}
+footer .conteudo-direita .box {
+  display: flex;
+  gap: 80px;
+}
+@media (max-width: 768px) {
+  footer .conteudo-direita .box {
+    justify-content: space-between;
+    gap: 30px;
+  }
+}
+footer .conteudo-direita .midia h3 {
+  font-size: 1.125rem;
+  margin-bottom: 16px;
+}
+footer .conteudo-direita .institucional h3 {
+  font-size: 1.125rem;
+  margin-bottom: 16px;
+}
+@media (max-width: 768px) {
+  footer .conteudo-direita .institucional nav ul {
+    text-align: end;
+  }
+}
+footer .conteudo-direita .institucional nav ul li {
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+@media (max-width: 768px) {
+  footer .conteudo-direita .institucional nav ul li {
+    font-size: 1rem;
+    line-height: 1em;
+  }
+}
+footer .conteudo-esquerda {
+  width: 30%;
+}
+@media (max-width: 768px) {
+  footer .conteudo-esquerda {
+    width: auto;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}
+footer .conteudo-esquerda h2 {
+  font-family: "Benguiat";
+  font-size: 3.25rem;
+  line-height: 1em;
+}
+@media (max-width: 768px) {
+  footer .conteudo-esquerda h2 {
+    font-size: 3rem;
+  }
+}
+footer .conteudo-esquerda h3 {
+  font-size: 1.5rem;
+  line-height: 1em;
+  letter-spacing: 10px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  opacity: 0.75;
+}
+@media (max-width: 768px) {
+  footer .conteudo-esquerda h3 {
+    font-size: 1rem;
+  }
+}
+footer .logos-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 100px 4vw 0 4vw;
+}
+@media (max-width: 768px) {
+  footer .logos-footer {
+    padding: 60px 7vw 0 7vw;
+  }
+}
+@media (max-width: 768px) {
+  footer .logos-footer img {
+    width: 70px;
+  }
+}
+footer .texto-infinito {
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+}
+footer .texto-infinito h3 {
+  color: rgb(191, 191, 191);
+  font-size: 12vw;
+  font-family: "Benguiat", sans-serif;
+  mix-blend-mode: color-dodge;
+  animation: textoInfinito 10s infinite linear;
+  padding-left: 8vw;
+}
+@media (max-width: 768px) {
+  footer .texto-infinito h3 {
+    font-size: 16vw;
+  }
+}
+
+@keyframes textoInfinito {
+  100% {
+    transform: translateX(-100%);
+  }
+}

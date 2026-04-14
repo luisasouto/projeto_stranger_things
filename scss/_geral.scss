@@ -1,0 +1,309 @@
+.bl-principal {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-image: url("../imagens/banner-hero.webp");
+    background-position: center top;
+    // background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 0;
+    position: relative;
+
+    picture {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+        }
+    }
+
+    @media (max-width: 768px) {
+        align-items: normal;
+        padding-bottom: 40px;
+        // background-image: url("../imagens/banner-hero-mob.webp");
+    }
+
+    &::before {
+        content: "";
+        // background: radial-gradient(rgba(12, 1, 2, 0) 0%, rgba(12, 1, 2, 0.8) 100%);
+        background: linear-gradient(180deg, rgba(12, 1, 2, 0.00) 0%, #0C0102 100%);
+        width: 100%;
+        height: 101%;
+        position: absolute;
+        z-index: 3;
+        left: 0;
+        top: 0;
+        // mix-blend-mode: multiply;
+    }
+
+
+    .container {
+        position: relative;
+        z-index: 3;
+        justify-content: space-between;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            text-align: center;
+        }
+
+    }
+
+    .meta-1 {
+        width: 40%;
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+
+        h1 {
+            font-family: $fonte-titulo;
+            font-size: 4.125rem;
+            line-height: 1.2em;
+
+            @media (max-width: 768px) {
+                font-size: 3rem;
+                text-align: center;
+            }
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            line-height: 1em;
+            letter-spacing: 10px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            opacity: 0.75;
+
+            @media (max-width: 768px) {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .meta-2 {
+        width: 30%;
+        text-align: end;
+
+        @media (max-width: 768px) {
+            width: auto;
+            text-align: start;
+        }
+
+        h3 {
+            font-size: 2.25rem;
+            line-height: 1.2em;
+            margin-bottom: 24px;
+
+            @media (max-width: 768px) {
+                font-size: 1.75rem;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+.background {
+    background-image: url(../imagens/bg-sec2.webp);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 2;
+    background-color: $cor-principal;
+}
+
+.bl-cidade {
+    padding: 75px 0 60px 0;
+    position: relative;
+    z-index: 2;
+
+    @media (max-width: 768px) {
+        padding: 40px 0 60px 0;
+    }
+
+    .container {
+        display: block;
+    }
+
+    .meta-titulo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 60px;
+
+        @media (max-width: 768px) {
+            margin-bottom: 40px;
+        }
+    }
+
+    .botao {
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .cidades {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 14px;
+        }
+
+        .cidade {
+            position: relative;
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            padding: 20px;
+            aspect-ratio: 3 / 2;
+            overflow: hidden;
+            transition: ease 0.2s;
+            border-radius: 4px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: scale(1);
+                transition: ease 0.2s;
+            }
+
+            h3,
+            span {
+                position: relative;
+            }
+
+            h3 {
+                font-size: 1.25rem;
+                line-height: 1em;
+
+                @media (max-width: 768px) {
+                    font-size: 1rem;
+                }
+            }
+
+            span {
+                font-size: 0.8rem;
+                line-height: 1em;
+                display: block;
+
+                @media (max-width: 768px) {
+                    font-size: 0.7rem;
+                }
+            }
+
+            @media (min-width: 1200px) {
+                &:hover {
+                    img {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bl-depoimentos {
+    padding-bottom: 100px;
+
+    @media (max-width: 768px) {
+        padding-bottom: 75px;
+    }
+
+    .container {
+        display: block;
+    }
+
+    .logotipos {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 86px;
+
+        @media (max-width: 768px) {
+
+            img {
+                width: 100%;
+                object-fit: contain;
+                aspect-ratio: 1;
+                max-width: 90px;
+            }
+        }
+
+
+    }
+
+    .depoimentos {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+
+        p {
+            margin-top: 10px;
+
+            @media (max-width: 768px) {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+.bl-agradecimento {
+    padding: 40px 0 90px;
+    position: relative;
+    z-index: 2;
+    background-color: $cor-principal;
+
+    @media (max-width: 768px) {
+        padding-bottom: 60px;
+    }
+
+    .titulo-bloco {
+        text-align: center;
+        margin-bottom: 52px;
+    }
+
+    .lista-cidades {
+        display: flex;
+        justify-content: space-between;
+        margin: 16px 0;
+
+        @media (max-width: 768px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        li {
+            h3 {
+                font-size: 1.125rem;
+            }
+        }
+    }
+
+}
+
+#smooth-wrapper {
+    overflow: hidden !important;
+}
